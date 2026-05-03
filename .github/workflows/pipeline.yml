@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  test and lint:
+  test-and-lint:
     env:
       SECRET: ${{ secrets.SECRET }}
       TEST_MONGODB_URI:  ${{ secrets.TEST_MONGODB_URI }}
