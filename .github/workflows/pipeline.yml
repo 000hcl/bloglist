@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  test-and-lint:
+  test_and_lint:
     env:
       NODE_ENV: test
       PORT: 3003
@@ -40,7 +40,7 @@ jobs:
 
 
   deploy_app:
-    needs: [simple_deployment_pipeline]
+    needs: [test_and_lint]
     runs-on: ubuntu-latest
     steps:
       - name: Trigger deployment
