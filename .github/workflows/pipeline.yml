@@ -13,6 +13,7 @@ jobs:
   test-and-lint:
     env:
       NODE_ENV: test
+      PORT: 3003
       SECRET: ${{ secrets.SECRET }}
       TEST_MONGODB_URI:  ${{ secrets.TEST_MONGODB_URI }}
       MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
