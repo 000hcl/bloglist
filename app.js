@@ -10,6 +10,10 @@ const app = express()
 app.use(express.json())
 app.use(express.static('dist'))
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 const mongoUrl = config.MONGODB_URI
 mongoose.connect(mongoUrl, { family: 4 })
 
