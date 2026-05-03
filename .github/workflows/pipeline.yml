@@ -23,6 +23,9 @@ jobs:
         run: npm run lint
       - name: Run backend tests
         run: npm run test
+        env:
+          SECRET: ${{ secrets.SECRET }}
+          TEST_MONGODB_URI:  ${{ secrets.TEST_MONGODB_URI }}
       - name: build
         run: npm run build
       - name: run frontend tests
