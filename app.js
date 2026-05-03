@@ -8,6 +8,7 @@ const middleware = require('./utils/middleware')
 
 const app = express()
 app.use(express.json())
+app.use(express.static('dist'))
 
 const mongoUrl = config.MONGODB_URI
 mongoose.connect(mongoUrl, { family: 4 })
@@ -19,9 +20,9 @@ app.use('/api/users', userRouter)
 app.use('/api/login', loginRouter)
 
 if (process.env.NODE_ENV === 'test') {
-        const testingRouter = require('./controllers/testing')
-        app.use('/api/testing', testingRouter)
-    }
+  const testingRouter = require('./controllers/testing')
+  app.use('/api/testing', testingRouter)
+}
 
 app.use(middleware.errorHandler)
 

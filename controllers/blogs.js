@@ -45,17 +45,17 @@ blogsRouter.delete('/:id', middleware.userExtractor, async (request, response) =
   } else {
     response.status(401).json({ error: 'unauthorized' })
   }
-  
-  
+
+
 })
 
 blogsRouter.put('/:id', async (request, response) => {
   const blog = await Blog.findById(request.params.id)
-  console.log('found blog', blog);
-  
-  
+  console.log('found blog', blog)
+
+
   const { title, author, url, likes, user } = request.body
-  console.log('user is', user);
+  console.log('user is', user)
 
 
   if (!blog) {
@@ -70,8 +70,8 @@ blogsRouter.put('/:id', async (request, response) => {
 
 
   const savedBlog = await blog.save()
-  console.log('saved blog',savedBlog);
-  
+  console.log('saved blog',savedBlog)
+
   response.status(201).json(savedBlog)
 
 })

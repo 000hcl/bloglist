@@ -1,0 +1,50 @@
+{
+  "name": "bloglist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development node --watch index.js",
+    "test": "NODE_ENV=test node --test --test-concurrency=1",
+    "start:test": "NODE_ENV=test node --watch index.js",
+    "build": "vite build",
+    "lint": "eslint .",
+    "test:front": "vitest run",
+    "test:e2e": "playwright test --project=firefox"
+  },
+  "author": "000hcl",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "lodash": "^4.17.23",
+    "mongoose": "^9.1.3",
+    "axios": "^1.9.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.2.2",
+    "@eslint/js": "^9.39.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "jsdom": "^28.1.0",
+    "vite": "^6.3.5",
+    "vitest": "^4.0.18",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3"
+  }
+}
