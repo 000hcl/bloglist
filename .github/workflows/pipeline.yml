@@ -12,6 +12,7 @@ on:
 jobs:
   test-and-lint:
     env:
+      NODE_ENV: test
       SECRET: ${{ secrets.SECRET }}
       TEST_MONGODB_URI:  ${{ secrets.TEST_MONGODB_URI }}
       MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
@@ -33,7 +34,5 @@ jobs:
         run: npm run test:front
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Debug env
-        run: node -e "console.log(process.env.MONGODB_URI)"
       - name: Run Playwright tests
         run: npm run test:e2e
