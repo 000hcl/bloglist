@@ -27,12 +27,13 @@ jobs:
         run: npm run lint
       - name: Run backend tests
         run: npm run test
-
       - name: build
         run: npm run build
       - name: run frontend tests
         run: npm run test:front
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Debug env
+        run: node -e "console.log(process.env.MONGODB_URI)"
       - name: Run Playwright tests
         run: npm run test:e2e
