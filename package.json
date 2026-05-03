@@ -10,7 +10,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "test:front": "vitest run",
-    "test:e2e": "playwright test --project=firefox"
+    "test:e2e": "npx playwright test --project=firefox"
   },
   "author": "000hcl",
   "license": "ISC",
